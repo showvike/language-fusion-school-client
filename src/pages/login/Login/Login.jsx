@@ -1,14 +1,33 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 
 const Login = () => {
+  const [type, setType] = useState(0);
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const { logIn } = useAuth();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    logIn(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const message = error.message;
+        console.log(message);
+        setError(message);
+      });
+  };
 
   return (
     <div className="hero min-h-screen bg-login-texture bg-no-repeat bg-cover">
@@ -33,28 +52,34 @@ const Login = () => {
                   className="input input-bordered"
                   {...register("email", { required: true })}
                 />
-                {errors.email?.type === "required" && (
-                  <p className="text-red-400">
-                    <small>please enter a valid email</small>
-                  </p>
-                )}
               </div>
-              <div className="form-control">
+              {errors.email?.type === "required" && (
+                <p className="text-red-400">
+                  <small>please enter a valid email</small>
+                </p>
+              )}
+              <div className="form-control relative">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={type ? "text" : "password"}
                   placeholder="password"
                   className="input input-bordered"
                   {...register("password", { required: true })}
                 />
-                {errors.password?.type === "required" && (
-                  <p className="text-red-400">
-                    <small>please enter a valid password</small>
-                  </p>
-                )}
+                <button
+                  onClick={() => setType(!type)}
+                  className="absolute bottom-4 right-4"
+                >
+                  {type ? <FaRegEye /> : <FaRegEyeSlash />}
+                </button>
               </div>
+              {errors.password?.type === "required" && (
+                <p className="text-red-400">
+                  <small>please enter a valid password</small>
+                </p>
+              )}
               <div className="form-control mt-6">
                 <input
                   className="btn btn-primary"
@@ -62,12 +87,21 @@ const Login = () => {
                   value="Login"
                 />
               </div>
+              {error && (
+                <p className="text-red-400">
+                  <small>{error}</small>
+                </p>
+              )}
             </form>
             <label className="label">
-              <Link className="label-text-alt link link-hover">
+              <Link
+                to="/registration"
+                className="label-text-alt link link-hover"
+              >
                 New here? Create an account! Click here.
               </Link>
             </label>
+            <SocialLogin />
           </div>
         </div>
       </div>

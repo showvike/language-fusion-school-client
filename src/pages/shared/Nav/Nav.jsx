@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import defaultUserImage from "../../../assets/default-user-image.jpg";
 import logo2 from "../../../assets/logo-2.png";
+import useAuth from "../../../hooks/useAuth";
 
 const Nav = () => {
-  // To-Do:
-  const user = false;
+  const { user, logOut } = useAuth();
 
   const navItems = (
     <>
@@ -24,6 +24,17 @@ const Nav = () => {
       )}
     </>
   );
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("logout successful");
+      })
+      .catch((error) => {
+        const message = error.message;
+        console.log(message);
+      });
+  };
 
   return (
     <div className="navbar bg-neon-blue">
@@ -68,7 +79,17 @@ const Nav = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <img className="w-12 h-12 rounded-full" src={defaultUserImage} />
+          <div
+            className="tooltip tooltip-warning tooltip-left"
+            data-tip="Logout"
+          >
+            <button onClick={handleLogOut}>
+              <img
+                className="w-12 h-12 rounded-full"
+                src={user.photoURL || defaultUserImage}
+              />
+            </button>
+          </div>
         ) : (
           <Link to="/login">
             <button className="btn hover:bg-blue-700 hover:text-white">
