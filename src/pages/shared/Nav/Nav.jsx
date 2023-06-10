@@ -4,7 +4,7 @@ import logo2 from "../../../assets/logo-2.png";
 
 const Nav = () => {
   // To-Do:
-  const user = true;
+  const user = false;
 
   const navItems = (
     <>
@@ -26,7 +26,7 @@ const Nav = () => {
   );
 
   return (
-    <div className="navbar bg-nav-bg">
+    <div className="navbar bg-neon-blue">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -70,7 +70,7 @@ const Nav = () => {
         {user ? (
           <img className="w-12 h-12 rounded-full" src={defaultUserImage} />
         ) : (
-          <Link>
+          <Link to="/login">
             <button className="btn hover:bg-blue-700 hover:text-white">
               Login
             </button>
