@@ -1,6 +1,32 @@
+import { Link } from "react-router-dom";
+import defaultUserImage from "../../../assets/default-user-image.jpg";
+import logo2 from "../../../assets/logo-2.png";
+
 const Nav = () => {
+  // To-Do:
+  const user = true;
+
+  const navItems = (
+    <>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link>Instructors</Link>
+      </li>
+      <li>
+        <Link>Classes</Link>
+      </li>
+      {user && (
+        <li>
+          <Link>Dashboard</Link>
+        </li>
+      )}
+    </>
+  );
+
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-nav-bg">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -23,52 +49,33 @@ const Nav = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <Link to="/">
+          <div className="flex gap-4 items-center">
+            <img
+              className="w-12 h-12 object-contain"
+              src={logo2}
+              alt="logo 2"
+            />
+            <h1 className="font-bold text-xl">Language Fusion School</h1>
+          </div>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li tabIndex={0}>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1 font-medium">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {user ? (
+          <img className="w-12 h-12 rounded-full" src={defaultUserImage} />
+        ) : (
+          <Link>
+            <button className="btn hover:bg-blue-700 hover:text-white">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

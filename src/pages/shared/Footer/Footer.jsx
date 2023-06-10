@@ -2,7 +2,7 @@ import logo2 from "../../../assets/logo-2.png";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-base-200 rounded footer-class bg-footer-texture bg-no-repeat bg-cover text-white">
+    <footer className="footer footer-center p-10 bg-base-200 rounded footer-class bg-footer-texture bg-no-repeat bg-cover">
       <div>
         <img className="w-16 h-16 object-contain" src={logo2} alt="logo 2" />
         <h1 className="font-bold text-xl">Language Fusion School</h1>

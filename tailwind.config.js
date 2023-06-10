@@ -5,9 +5,13 @@ export default {
     extend: {
       backgroundImage: {
         "footer-texture": "url('/src/assets/footer-texture.svg')",
+        "error-texture": "url('/src/assets/error-texture.svg')",
       },
       fontFamily: {
         sans: ["Ubuntu", "sans-serif"],
+      },
+      colors: {
+        "nav-bg": "#2272ff",
       },
     },
   },
