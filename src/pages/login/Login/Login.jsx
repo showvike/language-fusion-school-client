@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 
@@ -14,6 +15,15 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const { logIn } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+
+  const handleEye = (event) => {
+    event.preventDefault();
+    setType(!type);
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -21,6 +31,14 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Login successful",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const message = error.message;
@@ -52,12 +70,12 @@ const Login = () => {
                   className="input input-bordered"
                   {...register("email", { required: true })}
                 />
+                {errors.email?.type === "required" && (
+                  <p className="text-red-400">
+                    <small>please enter a valid email</small>
+                  </p>
+                )}
               </div>
-              {errors.email?.type === "required" && (
-                <p className="text-red-400">
-                  <small>please enter a valid email</small>
-                </p>
-              )}
               <div className="form-control relative">
                 <label className="label">
                   <span className="label-text">Password</span>
@@ -69,7 +87,7 @@ const Login = () => {
                   {...register("password", { required: true })}
                 />
                 <button
-                  onClick={() => setType(!type)}
+                  onClick={handleEye}
                   className="absolute bottom-4 right-4"
                 >
                   {type ? <FaRegEye /> : <FaRegEyeSlash />}
@@ -86,12 +104,12 @@ const Login = () => {
                   type="submit"
                   value="Login"
                 />
+                {error && (
+                  <p className="text-red-400">
+                    <small>{error}</small>
+                  </p>
+                )}
               </div>
-              {error && (
-                <p className="text-red-400">
-                  <small>{error}</small>
-                </p>
-              )}
             </form>
             <label className="label">
               <Link
@@ -101,7 +119,7 @@ const Login = () => {
                 New here? Create an account! Click here.
               </Link>
             </label>
-            <SocialLogin />
+            <SocialLogin page="Login" />
           </div>
         </div>
       </div>
