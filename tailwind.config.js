@@ -7,6 +7,7 @@ export default {
         "footer-texture": "url('/src/assets/footer-texture.svg')",
         "error-texture": "url('/src/assets/error-texture.svg')",
         "login-texture": "url('/src/assets/login-texture.svg')",
+        "slider-texture": "url('/src/assets/slider-texture.svg')",
       },
       fontFamily: {
         sans: ["Ubuntu", "sans-serif"],
