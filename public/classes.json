@@ -1,0 +1,50 @@
+[
+  {
+    "image": "https://i.ibb.co/Wx3t340/english.jpg",
+    "name": "English Conversation Mastery",
+    "instructor_name": "Sarah Johnson",
+    "available_seats": 15,
+    "price": 49.99,
+    "type": "popular"
+  },
+  {
+    "image": "https://i.ibb.co/WBxMsg8/spanish.jpg",
+    "name": "Spanish Language Proficiency",
+    "instructor_name": "Alejandro Torres",
+    "available_seats": 10,
+    "price": 79.99,
+    "type": "popular"
+  },
+  {
+    "image": "https://i.ibb.co/wM8tX3L/french.jpg",
+    "name": "French for Beginners",
+    "instructor_name": "Sophie Martin",
+    "available_seats": 20,
+    "price": 59.99,
+    "type": "popular"
+  },
+  {
+    "image": "https://i.ibb.co/wggT2pT/german.jpg",
+    "name": "German Language Fluency",
+    "instructor_name": "Julia Müller",
+    "available_seats": 8,
+    "price": 69.99,
+    "type": "popular"
+  },
+  {
+    "image": "https://i.ibb.co/GVdYhPS/italian.jpg",
+    "name": "Italian Conversation Practice",
+    "instructor_name": "Marco Rossi",
+    "available_seats": 12,
+    "price": 99.99,
+    "type": "popular"
+  },
+  {
+    "image": "https://i.ibb.co/Cwqt8Yk/chainese.jpg",
+    "name": "Chinese Language Essentials",
+    "instructor_name": "Li Wei",
+    "available_seats": 5,
+    "price": 89.99,
+    "type": "popular"
+  }
+]
