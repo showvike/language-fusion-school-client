@@ -1,5 +1,5 @@
-const Card = ({ item }) => {
-  const { image, name } = item;
+const Card = ({ card }) => {
+  const { image, name } = card;
   const words = name.split(" ");
 
   return (

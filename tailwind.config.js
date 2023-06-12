@@ -9,6 +9,7 @@ export default {
         "login-texture": "url('/src/assets/login-texture.svg')",
         "slider-texture": "url('/src/assets/slider-texture.svg')",
         "classes-texture": "url('/src/assets/classes-texture.svg')",
+        "instructors-texture": "url('/src/assets/instructors-texture.svg')",
       },
       fontFamily: {
         sans: ["Ubuntu", "sans-serif"],
