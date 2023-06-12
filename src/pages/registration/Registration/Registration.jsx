@@ -22,15 +22,35 @@ const Registration = () => {
         userUpdate(data.name, data.photo_url)
           .then(() => {
             console.log("user updated successfully");
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Registration successful",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-            navigate("/");
-            navigate(0);
+            const savedUser = {
+              name: data.name,
+              email: data.email,
+              role: "student",
+            };
+            fetch(
+              "https://b7a12-summer-camp-server-side-showvike.vercel.app/users",
+              {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(savedUser),
+              }
+            )
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Registration successful",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                  navigate("/");
+                  navigate(0);
+                }
+              });
           })
           .catch((error) => {
             const message = error.message;

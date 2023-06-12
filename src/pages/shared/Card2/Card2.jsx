@@ -1,5 +1,29 @@
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAuth from "../../../hooks/useAuth";
+
 const Card2 = ({ item }) => {
   const { image, name, email, instructor_name, available_seats, price } = item;
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSelect = () => {
+    if (!user) {
+      Swal.fire({
+        title: "Log In!",
+        text: "Please log in before selecting the course!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Log In!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login");
+        }
+      });
+    }
+  };
 
   return (
     <div
@@ -20,6 +44,7 @@ const Card2 = ({ item }) => {
             <p>Price: {price}</p>
             <div className="card-actions justify-end">
               <button
+                onClick={handleSelect}
                 className="btn btn-info"
                 disabled={available_seats === 0 ? true : false}
               >

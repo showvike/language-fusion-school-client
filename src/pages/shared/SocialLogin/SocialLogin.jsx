@@ -15,14 +15,33 @@ const SocialLogin = ({ page }) => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: `${page} successful`,
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        navigate(from, { replace: true });
+        const savedUser = {
+          name: user.displayName,
+          email: user.email,
+          role: "student",
+        };
+        fetch(
+          "https://b7a12-summer-camp-server-side-showvike.vercel.app/users",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(savedUser),
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: `${page} successful`,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate(from, { replace: true });
+          });
       })
       .catch((error) => {
         const message = error.message;

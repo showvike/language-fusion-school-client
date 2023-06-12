@@ -1,50 +1,50 @@
 [
   {
     "image": "https://i.ibb.co/RyLWF39/english-teacher.jpg",
-    "name": "Sarah Johnson English",
-    "email": "sarah.johnson@gmail.com",
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@instructor.com",
     "language": "english",
     "type": "popular"
   },
   {
     "image": "https://i.ibb.co/MB5h89w/spanish-teacher.jpg",
-    "name": "Alejandro Torres Spanish",
-    "email": "alejandro.torres@gmail.com",
+    "name": "Alejandro Torres",
+    "email": "alejandro.torres@instructor.com",
     "language": "spanish",
     "type": "popular"
   },
   {
     "image": "https://i.ibb.co/x3KfNCS/french-teacher.jpg",
-    "name": "Sophie Martin French",
-    "email": "sophie.martin@gmail.com",
+    "name": "Sophie Martin",
+    "email": "sophie.martin@instructor.com",
     "language": "french",
     "type": "popular"
   },
   {
     "image": "https://i.ibb.co/BqRYpTR/german-teacher.jpg",
-    "name": "Julia Müller German",
-    "email": "julia.muller@gmail.com",
+    "name": "Julia Müller",
+    "email": "julia.muller@instructor.com",
     "language": "german",
     "type": "popular"
   },
   {
     "image": "https://i.ibb.co/t4jN7hS/italian-teacher.jpg",
-    "name": "Marco Rossi Italian",
-    "email": "marco.rossi@gmail.com",
+    "name": "Marco Rossi",
+    "email": "marco.rossi@instructor.com",
     "language": "italian",
     "type": "popular"
   },
   {
     "image": "https://i.ibb.co/vvyyzm1/chinese-teacher.jpg",
-    "name": "Li Wei Chinese",
-    "email": "li.wei@gmail.com",
+    "name": "Li Wei",
+    "email": "li.wei@instructor.com",
     "language": "chinese",
     "type": "popular"
   },
   {
     "image": "https://i.ibb.co/17Tzcv7/11856288-475678045945184-7609109136217457193-o.jpg",
     "name": "Ovi Max Bengali",
-    "email": "ovi.max@gmail.com",
+    "email": "ovi.max@instructor.com",
     "language": "bengali",
     "type": "basic"
   }
