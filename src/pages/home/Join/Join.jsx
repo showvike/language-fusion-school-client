@@ -7,11 +7,11 @@ const Join = () => {
       <h1 className="font-bold text-5xl text-center pt-4">Join Us</h1>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <Slide direction="right" delay={1000}>
+          <Slide direction="right" delay={1000} triggerOnce>
             <img src={join} className="max-w-sm rounded-lg shadow-2xl" />
           </Slide>
           <div className="w-1/2">
-            <Slide cascade>
+            <Slide cascade triggerOnce>
               <h1 className="text-5xl font-bold">Join</h1>
               <h1 className="mt-8 text-5xl font-bold">
                 Language Fusion School

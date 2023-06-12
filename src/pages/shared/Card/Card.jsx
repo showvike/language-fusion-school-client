@@ -10,7 +10,7 @@ const Card = ({ card }) => {
         <img src={image} />
       </figure>
       <div className="card-body transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-        <Fade className="flex flex-col gap-4">
+        <Fade className="flex flex-col gap-4" triggerOnce>
           <div>
             <h2 className="card-title text-3xl">{words[0]}</h2>
             <h2 className="card-title">
