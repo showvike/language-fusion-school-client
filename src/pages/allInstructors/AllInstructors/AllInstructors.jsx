@@ -7,11 +7,7 @@ const AllInstructors = () => {
   const heading = "Our Instructors";
 
   return (
-    <Cards2
-      heading={heading}
-      background={background}
-      instructors={instructors}
-    />
+    <Cards2 heading={heading} background={background} items={instructors} />
   );
 };
 

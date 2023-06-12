@@ -1,10 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import useAuth from "../../../hooks/useAuth";
 
-const Card2 = ({ item }) => {
+const Card2 = ({ item, user, role }) => {
   const { image, name, email, instructor_name, available_seats, price } = item;
-  const { user } = useAuth();
   const navigate = useNavigate();
 
   const handleSelect = () => {
@@ -46,7 +44,13 @@ const Card2 = ({ item }) => {
               <button
                 onClick={handleSelect}
                 className="btn btn-info"
-                disabled={available_seats === 0 ? true : false}
+                disabled={
+                  available_seats === 0 ||
+                  role === "admin" ||
+                  role === "instructor"
+                    ? true
+                    : false
+                }
               >
                 Select
               </button>
