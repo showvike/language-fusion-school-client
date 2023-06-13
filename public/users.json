@@ -3,49 +3,60 @@
     "image": "https://i.ibb.co/RyLWF39/english-teacher.jpg",
     "name": "Sarah Johnson",
     "email": "sarah.johnson@instructor.com",
-    "language": "english",
-    "type": "popular"
+    "role": "instructor"
   },
   {
     "image": "https://i.ibb.co/MB5h89w/spanish-teacher.jpg",
     "name": "Alejandro Torres",
     "email": "alejandro.torres@instructor.com",
-    "language": "spanish",
-    "type": "popular"
+    "role": "instructor"
   },
   {
     "image": "https://i.ibb.co/x3KfNCS/french-teacher.jpg",
     "name": "Sophie Martin",
     "email": "sophie.martin@instructor.com",
-    "language": "french",
-    "type": "popular"
+    "role": "instructor"
   },
   {
     "image": "https://i.ibb.co/BqRYpTR/german-teacher.jpg",
     "name": "Julia Müller",
     "email": "julia.muller@instructor.com",
-    "language": "german",
-    "type": "popular"
+    "role": "instructor"
   },
   {
     "image": "https://i.ibb.co/t4jN7hS/italian-teacher.jpg",
     "name": "Marco Rossi",
     "email": "marco.rossi@instructor.com",
-    "language": "italian",
-    "type": "popular"
+    "role": "instructor"
   },
   {
     "image": "https://i.ibb.co/vvyyzm1/chinese-teacher.jpg",
     "name": "Li Wei",
     "email": "li.wei@instructor.com",
-    "language": "chinese",
-    "type": "popular"
+    "role": "instructor"
   },
   {
     "image": "https://i.ibb.co/17Tzcv7/11856288-475678045945184-7609109136217457193-o.jpg",
     "name": "Ovi Max Bengali",
     "email": "ovi.max@instructor.com",
-    "language": "bengali",
-    "type": "basic"
+    "role": "instructor"
+  },
+  {
+    "image": "https://i.ibb.co/MV8hVNj/iron-man.webp",
+    "name": "admin",
+    "email": "admin@languagefusionschool.com",
+    "role": "admin"
+  },
+  {
+    "image": "https://i.ibb.co/Yyh3HjM/captain-america.webp",
+    "name": "instructor",
+    "email": "instructor@languagefusionschool.com",
+    "role": "instructor"
+  },
+  {
+    "image": "https://i.ibb.co/MV8hVNj/iron-man.webp",
+    "name": "student",
+    "email": "student@languagefusionschool.com",
+    "role": "student"
   }
 ]

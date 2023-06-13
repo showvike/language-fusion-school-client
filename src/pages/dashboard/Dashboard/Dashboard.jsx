@@ -39,8 +39,8 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/add-class">Add a Class</NavLink>
               </li>
-              <li to="/dashboard/total-classes">
-                <NavLink>My Classes</NavLink>
+              <li>
+                <NavLink to="/dashboard/total-classes">My Classes</NavLink>
               </li>
             </>
           )}
@@ -49,8 +49,8 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/manage-classes">Manage Classes</NavLink>
               </li>
-              <li to="/dashboard/manage-users">
-                <NavLink>Manage Users</NavLink>
+              <li>
+                <NavLink to="/dashboard/manage-users">Manage Users</NavLink>
               </li>
             </>
           )}

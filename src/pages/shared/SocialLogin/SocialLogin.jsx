@@ -16,6 +16,7 @@ const SocialLogin = ({ page }) => {
         const user = result.user;
         console.log(user);
         const savedUser = {
+          image: user.photoURL,
           name: user.displayName,
           email: user.email,
           role: "student",

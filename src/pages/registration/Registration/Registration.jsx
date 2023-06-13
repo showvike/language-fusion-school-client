@@ -23,6 +23,7 @@ const Registration = () => {
           .then(() => {
             console.log("user updated successfully");
             const savedUser = {
+              image: user.photoURL,
               name: data.name,
               email: data.email,
               role: "student",

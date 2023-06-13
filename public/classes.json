@@ -1,65 +1,65 @@
 [
   {
-    "image": "https://i.ibb.co/Wx3t340/english.jpg",
-    "name": "English Conversation Mastery",
     "instructor_name": "Sarah Johnson",
+    "instructor_email": "sarah.johnson@instructor.com",
+    "name": "English Conversation Mastery",
+    "image": "https://i.ibb.co/Wx3t340/english.jpg",
     "available_seats": 15,
     "price": 49.99,
-    "type": "popular",
-    "language": "english"
+    "status": "approve"
   },
   {
-    "image": "https://i.ibb.co/WBxMsg8/spanish.jpg",
-    "name": "Spanish Language Proficiency",
     "instructor_name": "Alejandro Torres",
+    "instructor_email": "alejandro.torres@instructor.com",
+    "name": "Spanish Language Proficiency",
+    "image": "https://i.ibb.co/WBxMsg8/spanish.jpg",
     "available_seats": 10,
     "price": 79.99,
-    "type": "popular",
-    "language": "spanish"
+    "status": "approve"
   },
   {
-    "image": "https://i.ibb.co/wM8tX3L/french.jpg",
-    "name": "French Conversation Beginners",
     "instructor_name": "Sophie Martin",
+    "instructor_email": "sophie.martin@instructor.com",
+    "name": "French Conversation Beginners",
+    "image": "https://i.ibb.co/wM8tX3L/french.jpg",
     "available_seats": 20,
     "price": 59.99,
-    "type": "popular",
-    "language": "french"
+    "status": "approve"
   },
   {
-    "image": "https://i.ibb.co/wggT2pT/german.jpg",
-    "name": "German Language Fluency",
     "instructor_name": "Julia Müller",
+    "instructor_email": "julia.muller@instructor.com",
+    "name": "German Language Fluency",
+    "image": "https://i.ibb.co/wggT2pT/german.jpg",
     "available_seats": 8,
     "price": 69.99,
-    "type": "popular",
-    "language": "german"
+    "status": "approve"
   },
   {
-    "image": "https://i.ibb.co/GVdYhPS/italian.jpg",
-    "name": "Italian Conversation Practice",
     "instructor_name": "Marco Rossi",
+    "instructor_email": "marco.rossi@instructor.com",
+    "name": "Italian Conversation Practice",
+    "image": "https://i.ibb.co/GVdYhPS/italian.jpg",
     "available_seats": 12,
     "price": 99.99,
-    "type": "popular",
-    "language": "italian"
+    "status": "approve"
   },
   {
-    "image": "https://i.ibb.co/Cwqt8Yk/chainese.jpg",
-    "name": "Chinese Language Essentials",
     "instructor_name": "Li Wei",
+    "instructor_email": "li.wei@instructor.com",
+    "name": "Chinese Language Essentials",
+    "image": "https://i.ibb.co/Cwqt8Yk/chainese.jpg",
     "available_seats": 5,
     "price": 89.99,
-    "type": "popular",
-    "language": "chinese"
+    "status": "approve"
   },
   {
-    "image": "https://i.ibb.co/rk6m94N/bengali.jpg",
+    "instructor_name": "Ovi Max",
+    "instructor_email": "ovi.max@instructor.com",
     "name": "Bengali Language Essentials",
-    "instructor_name": "Ovi",
+    "image": "https://i.ibb.co/rk6m94N/bengali.jpg",
     "available_seats": 7,
     "price": 99.99,
-    "type": "basic",
-    "language": "bengali"
+    "status": "approve"
   }
 ]
