@@ -3,8 +3,5 @@
 @tailwind utilities;
 
 .drawer-side a.active {
-  color: black;
-}
-.drawer-side a.active {
   background-color: #32278f;
 }

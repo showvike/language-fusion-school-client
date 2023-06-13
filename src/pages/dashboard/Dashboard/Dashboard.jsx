@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import useRole from "../../../hooks/useRole";
 
 const Dashboard = () => {
@@ -8,7 +8,7 @@ const Dashboard = () => {
     <div className="drawer lg:drawer-open bg-dashboard-texture bg-cover">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
-        {/* Page content here */}
+        <Outlet />
         <label
           htmlFor="my-drawer-2"
           className="btn btn-primary drawer-button lg:hidden"
@@ -18,7 +18,7 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full text-white">
+        <ul className="menu p-4 w-80 h-full">
           {/* Sidebar content here */}
           {role === "student" && (
             <>
@@ -27,8 +27,10 @@ const Dashboard = () => {
                   My Selected Classes
                 </NavLink>
               </li>
-              <li to="/dashboard/enrolled-classes">
-                <NavLink>My Enrolled Classes</NavLink>
+              <li>
+                <NavLink to="/dashboard/enrolled-classes">
+                  My Enrolled Classes
+                </NavLink>
               </li>
             </>
           )}

@@ -2,11 +2,33 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Card2 = ({ item, user, role }) => {
-  const { image, name, email, instructor_name, available_seats, price } = item;
+  const { image, name, email, instructor_name, available_seats, price, _id } =
+    item;
   const navigate = useNavigate();
 
   const handleSelect = () => {
-    if (!user) {
+    if (user && user.email) {
+      const cartItem = { classId: _id, name, image, price, email: user.email };
+      fetch("https://b7a12-summer-camp-server-side-showvike.vercel.app/carts", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(cartItem),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Class added successfully.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+    } else if (!user) {
       Swal.fire({
         title: "Log In!",
         text: "Please log in before selecting the course!",

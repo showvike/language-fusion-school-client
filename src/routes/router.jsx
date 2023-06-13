@@ -3,6 +3,7 @@ import Main from "../layout/Main/Main";
 import AllClasses from "../pages/allClasses/AllClasses/AllClasses";
 import AllInstructors from "../pages/allInstructors/AllInstructors/AllInstructors";
 import Dashboard from "../pages/dashboard/Dashboard/Dashboard";
+import EnrolledClasses from "../pages/dashboard/EnrolledClasses/EnrolledClasses";
 import SelectedClasses from "../pages/dashboard/SelectedClasses/SelectedClasses";
 import Home from "../pages/home/Home/Home";
 import Login from "../pages/login/Login/Login";
@@ -50,14 +51,16 @@ const router = createBrowserRouter([
             <Dashboard />
           </PrivateRoute>
         ),
-      },
-      {
-        path: "/dashboard/selected-classes",
-        element: (
-          <PrivateRoute>
-            <SelectedClasses />
-          </PrivateRoute>
-        ),
+        children: [
+          {
+            path: "/dashboard/selected-classes",
+            element: <SelectedClasses />,
+          },
+          {
+            path: "/dashboard/enrolled-classes",
+            element: <EnrolledClasses />,
+          },
+        ],
       },
     ],
     errorElement: <Error />,
