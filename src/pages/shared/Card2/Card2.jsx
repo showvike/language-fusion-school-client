@@ -61,7 +61,7 @@ const Card2 = ({ item, user, role }) => {
         {available_seats !== undefined && <p>Seats: {available_seats}</p>}
         {price && (
           <>
-            <p>Price: {price}</p>
+            <p>Price: ${price}</p>
             <div className="card-actions justify-end">
               <button
                 onClick={handleSelect}
