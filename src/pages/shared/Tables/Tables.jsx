@@ -1,6 +1,6 @@
 import Table from "../Table/Table";
 
-const Tables = ({ cart, heading }) => {
+const Tables = ({ cart, heading, refetch }) => {
   return (
     <div className="w-full">
       <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
@@ -21,7 +21,12 @@ const Tables = ({ cart, heading }) => {
           </thead>
           <tbody>
             {cart.map((item, index) => (
-              <Table key={item._id} item={item} index={index} />
+              <Table
+                key={item._id}
+                item={item}
+                index={index}
+                refetch={refetch}
+              />
             ))}
           </tbody>
         </table>
