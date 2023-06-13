@@ -19,7 +19,7 @@ const Nav = () => {
       </li>
       {user && (
         <li>
-          <Link>Dashboard</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
       )}
     </>

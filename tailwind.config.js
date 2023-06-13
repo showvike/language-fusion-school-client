@@ -11,6 +11,7 @@ export default {
         "classes-texture": "url('/src/assets/classes-texture.svg')",
         "instructors-texture": "url('/src/assets/instructors-texture.svg')",
         "join-texture": "url('/src/assets/join-texture.svg')",
+        "dashboard-texture": "url('/src/assets/dashboard-texture.svg')",
       },
       fontFamily: {
         sans: ["Ubuntu", "sans-serif"],
