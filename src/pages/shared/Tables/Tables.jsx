@@ -1,6 +1,9 @@
+import useRole from "../../../hooks/useRole";
 import Table from "../Table/Table";
 
-const Tables = ({ cart, heading, refetch }) => {
+const Tables = ({ items, heading, refetch }) => {
+  const [, , role] = useRole();
+
   return (
     <div className="w-full">
       <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
@@ -14,18 +17,32 @@ const Tables = ({ cart, heading, refetch }) => {
               <th>#</th>
               <th>Image</th>
               <th>Name</th>
+              {role === "instructor" && <th>Available Seats</th>}
               <th>Price</th>
-              <th>Delete</th>
-              <th>Pay</th>
+              {role === "student" && (
+                <>
+                  <th>Delete</th>
+                  <th>Pay</th>
+                </>
+              )}
+              {role === "instructor" && (
+                <>
+                  <th>Status</th>
+                  <th>Total Enrolled Students</th>
+                  <th>Feedback</th>
+                  <th>Update</th>
+                </>
+              )}
             </tr>
           </thead>
           <tbody>
-            {cart.map((item, index) => (
+            {items.map((item, index) => (
               <Table
                 key={item._id}
                 item={item}
                 index={index}
                 refetch={refetch}
+                role={role}
               />
             ))}
           </tbody>

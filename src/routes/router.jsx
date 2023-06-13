@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         element: <AllClasses />,
         loader: () =>
           fetch(
-            "https://b7a12-summer-camp-server-side-showvike.vercel.app/classes"
+            "https://b7a12-summer-camp-server-side-showvike.vercel.app/classes?status=approved"
           ),
       },
       {

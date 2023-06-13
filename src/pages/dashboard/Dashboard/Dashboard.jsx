@@ -1,13 +1,18 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import useRole from "../../../hooks/useRole";
 
 const Dashboard = () => {
   const [, , role] = useRole();
+  const location = useLocation();
+  console.log(location);
 
   return (
     <div className="drawer lg:drawer-open bg-dashboard-texture bg-cover">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
+        {location.pathname === "/dashboard" && (
+          <h2 className="uppercase font-bold text-5xl">{role} Dashboard</h2>
+        )}
         <Outlet />
         <label
           htmlFor="my-drawer-2"

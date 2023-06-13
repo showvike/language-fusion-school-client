@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-const Table = ({ item, index, refetch }) => {
+const Table = ({ item, index, refetch, role }) => {
   const handleDelete = (item) => {
     Swal.fire({
       title: "Are you sure?",
@@ -39,18 +39,33 @@ const Table = ({ item, index, refetch }) => {
         </div>
       </td>
       <td>{item.name}</td>
+      {role === "instructor" && <td>{item.available_seats}</td>}
       <td>${item.price}</td>
-      <td>
-        <button
-          onClick={() => handleDelete(item)}
-          className="btn btn-error btn-sm"
-        >
-          Delete
-        </button>
-      </td>
-      <td>
-        <button className="btn btn-warning btn-sm">PAY</button>
-      </td>
+      {role === "students" && (
+        <>
+          <td>
+            <button
+              onClick={() => handleDelete(item)}
+              className="btn btn-error btn-sm"
+            >
+              Delete
+            </button>
+          </td>
+          <td>
+            <button className="btn btn-warning btn-sm">PAY</button>
+          </td>
+        </>
+      )}
+      {role === "instructor" && (
+        <>
+          <td>{item.status}</td>
+          <td>{item?.total_enrolled_students}</td>
+          <td>{item?.feedback}</td>
+          <td>
+            <button className="btn btn-warning btn-sm">Update</button>
+          </td>
+        </>
+      )}
     </tr>
   );
 };

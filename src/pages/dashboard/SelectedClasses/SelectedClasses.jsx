@@ -6,7 +6,7 @@ const SelectedClasses = () => {
   console.log(cart);
   const heading = "Selected Classes";
 
-  return <Tables cart={cart} heading={heading} refetch={refetch} />;
+  return <Tables items={cart} heading={heading} refetch={refetch} />;
 };
 
 export default SelectedClasses;

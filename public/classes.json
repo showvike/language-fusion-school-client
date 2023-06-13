@@ -6,7 +6,9 @@
     "image": "https://i.ibb.co/Wx3t340/english.jpg",
     "available_seats": 15,
     "price": 49.99,
-    "status": "approve"
+    "status": "approved",
+    "total_enrolled_students": 0,
+    "feedback": "good"
   },
   {
     "instructor_name": "Alejandro Torres",
@@ -15,7 +17,9 @@
     "image": "https://i.ibb.co/WBxMsg8/spanish.jpg",
     "available_seats": 10,
     "price": 79.99,
-    "status": "approve"
+    "status": "approved",
+    "total_enrolled_students": 0,
+    "feedback": "good"
   },
   {
     "instructor_name": "Sophie Martin",
@@ -24,7 +28,9 @@
     "image": "https://i.ibb.co/wM8tX3L/french.jpg",
     "available_seats": 20,
     "price": 59.99,
-    "status": "approve"
+    "status": "approved",
+    "total_enrolled_students": 0,
+    "feedback": "good"
   },
   {
     "instructor_name": "Julia Müller",
@@ -33,7 +39,9 @@
     "image": "https://i.ibb.co/wggT2pT/german.jpg",
     "available_seats": 8,
     "price": 69.99,
-    "status": "approve"
+    "status": "approved",
+    "total_enrolled_students": 0,
+    "feedback": "good"
   },
   {
     "instructor_name": "Marco Rossi",
@@ -42,7 +50,9 @@
     "image": "https://i.ibb.co/GVdYhPS/italian.jpg",
     "available_seats": 12,
     "price": 99.99,
-    "status": "approve"
+    "status": "approved",
+    "total_enrolled_students": 0,
+    "feedback": "good"
   },
   {
     "instructor_name": "Li Wei",
@@ -51,15 +61,30 @@
     "image": "https://i.ibb.co/Cwqt8Yk/chainese.jpg",
     "available_seats": 5,
     "price": 89.99,
-    "status": "approve"
+    "status": "approved",
+    "total_enrolled_students": 0,
+    "feedback": "good"
   },
   {
     "instructor_name": "Ovi Max",
     "instructor_email": "ovi.max@instructor.com",
     "name": "Bengali Language Essentials",
     "image": "https://i.ibb.co/rk6m94N/bengali.jpg",
-    "available_seats": 7,
+    "available_seats": 0,
     "price": 99.99,
-    "status": "approve"
+    "status": "approved",
+    "total_enrolled_students": 0,
+    "feedback": "good"
+  },
+  {
+    "instructor_name": "instructor",
+    "instructor_email": "instructor@languagefusionschool.com",
+    "name": "Hindi",
+    "image": "https://cdn.pixabay.com/photo/2016/11/23/14/36/background-1853251_1280.jpg",
+    "available_seats": 20,
+    "price": 59.99,
+    "status": "pending",
+    "total_enrolled_students": 0,
+    "feedback": "good"
   }
 ]
