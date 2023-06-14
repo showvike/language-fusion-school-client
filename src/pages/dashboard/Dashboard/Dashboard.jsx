@@ -1,3 +1,11 @@
+import {
+  FaCheckDouble,
+  FaCheckSquare,
+  FaClipboardList,
+  FaSave,
+  FaThList,
+  FaUsers,
+} from "react-icons/fa";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import useRole from "../../../hooks/useRole";
 
@@ -29,12 +37,12 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="/dashboard/selected-classes">
-                  My Selected Classes
+                  <FaCheckSquare /> My Selected Classes
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/enrolled-classes">
-                  My Enrolled Classes
+                  <FaCheckDouble /> My Enrolled Classes
                 </NavLink>
               </li>
             </>
@@ -42,20 +50,28 @@ const Dashboard = () => {
           {role === "instructor" && (
             <>
               <li>
-                <NavLink to="/dashboard/add-class">Add a Class</NavLink>
+                <NavLink to="/dashboard/add-class">
+                  <FaSave /> Add a Class
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/added-classes">My Classes</NavLink>
+                <NavLink to="/dashboard/added-classes">
+                  <FaClipboardList /> My Classes
+                </NavLink>
               </li>
             </>
           )}
           {role === "admin" && (
             <>
               <li>
-                <NavLink to="/dashboard/manage-classes">Manage Classes</NavLink>
+                <NavLink to="/dashboard/manage-classes">
+                  <FaThList /> Manage Classes
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manage-users">Manage Users</NavLink>
+                <NavLink to="/dashboard/manage-users">
+                  <FaUsers /> Manage Users
+                </NavLink>
               </li>
             </>
           )}
