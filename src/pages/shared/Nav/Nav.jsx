@@ -1,10 +1,30 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import defaultUserImage from "../../../assets/default-user-image.jpg";
 import logo2 from "../../../assets/logo-2.png";
+import moon from "../../../assets/moon.png";
+import sun from "../../../assets/sun.png";
 import useAuth from "../../../hooks/useAuth";
 
 const Nav = () => {
   const { user, logOut } = useAuth();
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
 
   const navItems = (
     <>
@@ -78,6 +98,13 @@ const Nav = () => {
         <ul className="menu menu-horizontal px-1 font-medium">{navItems}</ul>
       </div>
       <div className="navbar-end">
+        <button className="btn btn-square btn-ghost">
+          <label className="swap swap-rotate w-12 h-12">
+            <input onChange={handleToggle} type="checkbox" />
+            <img src={sun} alt="light" className="w-8 h-8 swap-on" />
+            <img src={moon} alt="dark" className="w-8 h-8 swap-off" />
+          </label>
+        </button>
         {user ? (
           <div
             className="tooltip tooltip-warning tooltip-left"
