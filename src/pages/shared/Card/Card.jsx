@@ -5,7 +5,7 @@ const Card = ({ card }) => {
   const words = name.split(" ");
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl image-full">
+    <div className="card md:w-96 bg-base-100 shadow-xl image-full">
       <figure>
         <img src={image} />
       </figure>

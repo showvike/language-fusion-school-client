@@ -78,7 +78,7 @@ const Nav = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black z-50"
           >
             {navItems}
           </ul>
@@ -90,7 +90,7 @@ const Nav = () => {
               src={logo2}
               alt="logo 2"
             />
-            <h1 className="font-bold text-xl">Language Fusion School</h1>
+            <h1 className="font-bold md:text-xl">Language Fusion School</h1>
           </div>
         </Link>
       </div>
@@ -98,7 +98,7 @@ const Nav = () => {
         <ul className="menu menu-horizontal px-1 font-medium">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-square btn-ghost">
+        <button className="btn btn-square btn-ghost mr-2">
           <label className="swap swap-rotate w-12 h-12">
             <input onChange={handleToggle} type="checkbox" />
             <img src={sun} alt="light" className="w-8 h-8 swap-on" />

@@ -11,9 +11,9 @@ const Cards = ({ api, background, heading }) => {
   }, [api]);
 
   return (
-    <div className={`h-screen ${background}`}>
+    <div className={`md:h-screen ${background} pb-4`}>
       <h1 className="font-bold text-5xl text-center pt-4">{heading}</h1>
-      <div className="pt-8 grid grid-cols-3 px-8 justify-items-center gap-8">
+      <div className="pt-8 grid grid-cols-1 md:grid-cols-3 px-8 justify-items-center gap-8">
         {cards.map((card) => (
           <Card key={card._id} card={card} />
         ))}
