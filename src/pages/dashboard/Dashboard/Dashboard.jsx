@@ -2,6 +2,7 @@ import {
   FaCheckDouble,
   FaCheckSquare,
   FaClipboardList,
+  FaHistory,
   FaSave,
   FaThList,
   FaUsers,
@@ -43,6 +44,11 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/enrolled-classes">
                   <FaCheckDouble /> My Enrolled Classes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/payment-history">
+                  <FaHistory /> Payment History
                 </NavLink>
               </li>
             </>

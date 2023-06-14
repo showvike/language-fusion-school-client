@@ -138,7 +138,7 @@ const Table = ({ item, index, refetch, role, location }) => {
         <>
           {role !== "student" && <td>{item.available_seats}</td>}
           <td>${item.price}</td>
-          {role === "students" && (
+          {role === "student" && (
             <>
               <td>
                 <button
@@ -149,7 +149,9 @@ const Table = ({ item, index, refetch, role, location }) => {
                 </button>
               </td>
               <td>
-                <button className="btn btn-warning btn-sm">PAY</button>
+                <Link to={`/dashboard/payment/${item._id}`}>
+                  <button className="btn btn-warning btn-sm">PAY</button>
+                </Link>
               </td>
             </>
           )}

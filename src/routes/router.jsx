@@ -9,6 +9,8 @@ import EnrolledClasses from "../pages/dashboard/EnrolledClasses/EnrolledClasses"
 import Feedback from "../pages/dashboard/Feedback/Feedback";
 import ManageClasses from "../pages/dashboard/ManageClasses/ManageClasses";
 import ManageUsers from "../pages/dashboard/ManageUsers/ManageUsers";
+import Payment from "../pages/dashboard/Payment/Payment";
+import PaymentHistory from "../pages/dashboard/PaymentHistory/PaymentHistory";
 import SelectedClasses from "../pages/dashboard/SelectedClasses/SelectedClasses";
 import Home from "../pages/home/Home/Home";
 import Login from "../pages/login/Login/Login";
@@ -69,10 +71,26 @@ const router = createBrowserRouter([
             ),
           },
           {
+            path: "/dashboard/payment/:id",
+            element: (
+              <StudentRoute>
+                <Payment />
+              </StudentRoute>
+            ),
+          },
+          {
             path: "/dashboard/enrolled-classes",
             element: (
               <StudentRoute>
                 <EnrolledClasses />
+              </StudentRoute>
+            ),
+          },
+          {
+            path: "/dashboard/payment-history",
+            element: (
+              <StudentRoute>
+                <PaymentHistory />
               </StudentRoute>
             ),
           },
