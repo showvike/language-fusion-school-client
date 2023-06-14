@@ -2,21 +2,21 @@ import { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import Tables from "../../shared/Tables/Tables";
 
-const TotalClasses = () => {
+const AddedClasses = () => {
   const { user, loading } = useAuth();
-  const [totalClasses, setTotalClasses] = useState([]);
+  const [addedClasses, setAddedClasses] = useState([]);
 
   useEffect(() => {
     fetch(
       `https://b7a12-summer-camp-server-side-showvike.vercel.app/classes?instructor_email=${user?.email}`
     )
       .then((res) => res.json())
-      .then((data) => setTotalClasses(data));
+      .then((data) => setAddedClasses(data));
   }, [user, loading]);
 
   const heading = "Total Classes";
 
-  return <Tables items={totalClasses} heading={heading} />;
+  return <Tables items={addedClasses} heading={heading} />;
 };
 
-export default TotalClasses;
+export default AddedClasses;

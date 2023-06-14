@@ -1,8 +1,10 @@
+import { useLocation } from "react-router-dom";
 import useRole from "../../../hooks/useRole";
 import Table from "../Table/Table";
 
 const Tables = ({ items, heading, refetch }) => {
   const [, , role] = useRole();
+  const location = useLocation();
 
   return (
     <div className="w-full">
@@ -10,27 +12,58 @@ const Tables = ({ items, heading, refetch }) => {
         <h3 className="text-3xl">{heading}</h3>
       </div>
       <div className="overflow-x-auto w-full">
-        <table className="table w-full">
+        <table className="table table-xs w-full">
           {/* head */}
           <thead className="text-white">
             <tr>
               <th>#</th>
               <th>Image</th>
               <th>Name</th>
-              {role === "instructor" && <th>Available Seats</th>}
-              <th>Price</th>
-              {role === "student" && (
+              {role === "admin" &&
+                location.pathname.endsWith("manage-users") && (
+                  <>
+                    <th>email</th>
+                    <th>role</th>
+                    <th>Make Instructor</th>
+                    <th>Make Admin</th>
+                  </>
+                )}
+              {role === "admin" &&
+                location.pathname.endsWith("manage-classes") && (
+                  <>
+                    <th>Ins Name</th>
+                    <th>Ins Email</th>
+                  </>
+                )}
+              {!location.pathname.endsWith("manage-users") && (
                 <>
-                  <th>Delete</th>
-                  <th>Pay</th>
-                </>
-              )}
-              {role === "instructor" && (
-                <>
-                  <th>Status</th>
-                  <th>Total Enrolled Students</th>
-                  <th>Feedback</th>
-                  <th>Update</th>
+                  {role !== "student" && <th>Available Seats</th>}
+                  <th>Price</th>
+                  {role === "student" && (
+                    <>
+                      <th>Delete</th>
+                      <th>Pay</th>
+                    </>
+                  )}
+                  {role !== "student" && (
+                    <>
+                      <th>Status</th>
+                      {role === "instructor" && (
+                        <>
+                          <th>Total Enrolled Students</th>
+                          <th>Feedback</th>
+                          <th>Update</th>
+                        </>
+                      )}
+                    </>
+                  )}
+                  {role === "admin" && (
+                    <>
+                      <th>Approve</th>
+                      <th>Deny</th>
+                      <th>Feedback</th>
+                    </>
+                  )}
                 </>
               )}
             </tr>
@@ -43,6 +76,7 @@ const Tables = ({ items, heading, refetch }) => {
                 index={index}
                 refetch={refetch}
                 role={role}
+                location={location}
               />
             ))}
           </tbody>

@@ -45,7 +45,7 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/add-class">Add a Class</NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/total-classes">My Classes</NavLink>
+                <NavLink to="/dashboard/added-classes">My Classes</NavLink>
               </li>
             </>
           )}
