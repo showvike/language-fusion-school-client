@@ -14,7 +14,10 @@ import Home from "../pages/home/Home/Home";
 import Login from "../pages/login/Login/Login";
 import Registration from "../pages/registration/Registration/Registration";
 import Error from "../pages/shared/Error/Error";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 import PrivateRoute from "./PrivateRoute";
+import StudentRoute from "./StudentRoute";
 
 const router = createBrowserRouter([
   {
@@ -59,35 +62,59 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/dashboard/selected-classes",
-            element: <SelectedClasses />,
+            element: (
+              <StudentRoute>
+                <SelectedClasses />
+              </StudentRoute>
+            ),
           },
           {
             path: "/dashboard/enrolled-classes",
-            element: <EnrolledClasses />,
+            element: (
+              <StudentRoute>
+                <EnrolledClasses />
+              </StudentRoute>
+            ),
           },
           {
             path: "/dashboard/add-class",
-            element: <AddClass />,
+            element: (
+              <InstructorRoute>
+                <AddClass />
+              </InstructorRoute>
+            ),
           },
           {
             path: "/dashboard/added-classes",
-            element: <AddedClasses />,
+            element: (
+              <InstructorRoute>
+                <AddedClasses />
+              </InstructorRoute>
+            ),
           },
           {
             path: "/dashboard/manage-classes",
-            element: <ManageClasses />,
-          },
-          {
-            path: "/dashboard/manage-users",
-            element: <ManageUsers />,
-            loader: () =>
-              fetch(
-                "https://b7a12-summer-camp-server-side-showvike.vercel.app/users"
-              ),
+            element: (
+              <AdminRoute>
+                <ManageClasses />
+              </AdminRoute>
+            ),
           },
           {
             path: "/dashboard/manage-classes/feedback/:id",
-            element: <Feedback />,
+            element: (
+              <AdminRoute>
+                <Feedback />
+              </AdminRoute>
+            ),
+          },
+          {
+            path: "/dashboard/manage-users",
+            element: (
+              <AdminRoute>
+                <ManageUsers />
+              </AdminRoute>
+            ),
           },
         ],
       },
